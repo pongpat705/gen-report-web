@@ -3,7 +3,7 @@
 }
 
 .card-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url('/assets/report-icon.jpg');
   background-size: cover;
 }
 
@@ -12,4 +12,8 @@
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+}
+
+button {
+  margin: 10px;
 }
