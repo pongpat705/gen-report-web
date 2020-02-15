@@ -43,6 +43,8 @@ export class ReportDesignComponent implements OnInit {
       this.displayedColumns.push(x.fieldName);
     });
     this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA);
+    this.paginator.length = this.allColumns.length;
+    this.paginator.pageSize = 5;
   }
 
   drop(event: CdkDragDrop<ReportStructure[]>) {

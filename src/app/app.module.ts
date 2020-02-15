@@ -15,7 +15,7 @@ import {
   MatSelectModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatBottomSheetModule, MatTableModule, MatPaginatorModule
+  MatBottomSheetModule, MatTableModule, MatPaginatorModule, MatIconModule
 } from '@angular/material';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
@@ -53,7 +53,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatBottomSheetModule,
     DragDropModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
