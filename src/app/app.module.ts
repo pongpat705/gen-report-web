@@ -7,8 +7,17 @@ import { AppLayoutComponent } from './core/app-layout/app-layout.component';
 import { AppHeaderComponent } from './core/app-header/app-header.component';
 import { AppFooterComponent } from './core/app-footer/app-footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatInputModule,
+  MatSelectModule,
+  MatToolbarModule,
+  MatTooltipModule
+} from '@angular/material';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { NotfoundComponent } from './core/notfound/notfound.component';
 
 
 
@@ -20,13 +29,20 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
     AppLayoutComponent,
     AppHeaderComponent,
     AppFooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRouteModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatTooltipModule,
+    MatButtonModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

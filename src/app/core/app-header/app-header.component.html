@@ -1,6 +1,9 @@
 <mat-toolbar color="primary">
-  <span>Report Platform</span>
   <mat-toolbar-row>
-    <span>First Row</span>
+    <span>Report Platform</span>
+    <ng-container>
+      <button mat-raised-button class="mat-button" routerLink="/" matTooltip="Show metrics" matTooltipPosition="above">Dashboard</button>
+      <button mat-raised-button class="mat-button" routerLink="/create-report" matTooltip="Create report" matTooltipPosition="above">Create Report</button>
+    </ng-container>
   </mat-toolbar-row>
 </mat-toolbar>

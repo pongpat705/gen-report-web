@@ -4,13 +4,15 @@ import {Route, RouterModule} from '@angular/router';
 import {CreateReportComponent} from '../../modules/create-report/create-report.component';
 import {AppLayoutComponent} from '../../core/app-layout/app-layout.component';
 import {DashboardComponent} from '../../modules/dashboard/dashboard.component';
+import {NotfoundComponent} from '../../core/notfound/notfound.component';
 
 const appRoutes: Route[] = [
   {
     path: '', component: AppLayoutComponent,
     children: [
       {path: '', component: DashboardComponent},
-      {path: 'create-report', component: CreateReportComponent}
+      {path: 'create-report', component: CreateReportComponent},
+      {path: '**', component: NotfoundComponent}
     ]
   }
 ];
