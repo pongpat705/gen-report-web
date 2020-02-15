@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DropdownModel} from './model/dropdown-model';
+import {DropdownModel} from '../../core/model/dropdown-model';
 
 @Component({
   selector: 'app-create-report',

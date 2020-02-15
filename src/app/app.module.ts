@@ -8,7 +8,7 @@ import { AppHeaderComponent } from './core/app-header/app-header.component';
 import { AppFooterComponent } from './core/app-footer/app-footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatButtonModule,
+  MatButtonModule, MatCardModule,
   MatFormFieldModule,
   MatGridListModule,
   MatInputModule,
@@ -42,7 +42,8 @@ import { NotfoundComponent } from './core/notfound/notfound.component';
     MatInputModule,
     MatTooltipModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
