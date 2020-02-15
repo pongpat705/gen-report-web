@@ -20,6 +20,7 @@ import {
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { SqlBottomSheetComponent } from './modules/dashboard/modules/sql-bottom-sheet/sql-bottom-sheet.component';
+import { ReportDesignComponent } from './modules/report-design/report-design.component';
 
 
 
@@ -33,7 +34,8 @@ import { SqlBottomSheetComponent } from './modules/dashboard/modules/sql-bottom-
     AppFooterComponent,
     DashboardComponent,
     NotfoundComponent,
-    SqlBottomSheetComponent
+    SqlBottomSheetComponent,
+    ReportDesignComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@
           <mat-card-title>{{r.reportName}}</mat-card-title>
           <mat-card-subtitle>Report Type : {{r.reportType}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="reportTypeParam.get(r.reportType)" alt="Photo of a Shiba Inu">
+        <img mat-card-image [src]="reportTypeParam.get(r.reportType)" alt="Photo of a report type">
         <mat-card-content>
           <p class="text" [matTooltip]="r.reportQuery" (click)="openBottomSheet(r.reportQuery);">
             {{r.reportQuery}}
@@ -16,7 +16,7 @@
         </mat-card-content>
         <mat-card-actions>
           <button mat-flat-button color="primary">EDIT</button>
-          <button mat-flat-button color="accent">DESIGN</button>
+          <button mat-flat-button color="accent" routerLink="/report-design">DESIGN</button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>

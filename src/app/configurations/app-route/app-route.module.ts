@@ -5,6 +5,7 @@ import {CreateReportComponent} from '../../modules/create-report/create-report.c
 import {AppLayoutComponent} from '../../core/app-layout/app-layout.component';
 import {DashboardComponent} from '../../modules/dashboard/dashboard.component';
 import {NotfoundComponent} from '../../core/notfound/notfound.component';
+import {ReportDesignComponent} from '../../modules/report-design/report-design.component';
 
 const appRoutes: Route[] = [
   {
@@ -12,6 +13,7 @@ const appRoutes: Route[] = [
     children: [
       {path: '', component: DashboardComponent},
       {path: 'create-report', component: CreateReportComponent},
+      {path: 'report-design', component: ReportDesignComponent},
       {path: '**', component: NotfoundComponent}
     ]
   }
