@@ -14,10 +14,12 @@ import {
   MatInputModule,
   MatSelectModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatBottomSheetModule
 } from '@angular/material';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
+import { SqlBottomSheetComponent } from './modules/dashboard/modules/sql-bottom-sheet/sql-bottom-sheet.component';
 
 
 
@@ -30,7 +32,8 @@ import { NotfoundComponent } from './core/notfound/notfound.component';
     AppHeaderComponent,
     AppFooterComponent,
     DashboardComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SqlBottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +46,12 @@ import { NotfoundComponent } from './core/notfound/notfound.component';
     MatTooltipModule,
     MatButtonModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatBottomSheetModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [],
+  entryComponents: [SqlBottomSheetComponent]
 })
 export class AppModule { }
