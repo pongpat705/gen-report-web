@@ -3,3 +3,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-grid-tile .mat-figure {
+  align-items: baseline !important;
+  margin-top: 10px !important;
+}

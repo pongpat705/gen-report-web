@@ -15,12 +15,13 @@ import {
   MatSelectModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatBottomSheetModule
+  MatBottomSheetModule, MatTableModule, MatPaginatorModule
 } from '@angular/material';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { SqlBottomSheetComponent } from './modules/dashboard/modules/sql-bottom-sheet/sql-bottom-sheet.component';
 import { ReportDesignComponent } from './modules/report-design/report-design.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
@@ -49,7 +50,10 @@ import { ReportDesignComponent } from './modules/report-design/report-design.com
     MatButtonModule,
     MatGridListModule,
     MatCardModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    DragDropModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

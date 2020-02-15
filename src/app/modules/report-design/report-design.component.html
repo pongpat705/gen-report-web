@@ -1,35 +1,56 @@
 <ng-container>
-  <mat-grid-list cols="12" rowHeight="100px">
+  <mat-grid-list cols="12" rowHeight="3:40">
 
-    <mat-grid-tile colspan="12">
-      <mat-form-field>
-        <mat-label>Report Name</mat-label>
-        <input matInput>
-      </mat-form-field>
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <div class="example-container">
+        <h2>All Columns</h2>
+
+        <div
+          cdkDropList
+          #allList="cdkDropList"
+          [cdkDropListData]="allColumns"
+          [cdkDropListConnectedTo]="[selectList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of allColumns" cdkDrag>{{item.fieldName}}</div>
+        </div>
+      </div>
     </mat-grid-tile>
 
-    <mat-grid-tile colspan="12">
-      <mat-form-field>
-        <mat-label>Report Type</mat-label>
-        <mat-select disableOptionCentering>
-          <mat-option value="">--Select--</mat-option>
-<!--          <mat-option *ngFor="let r of reportTypeDropdown" [value]="r.value">{{r.label}}</mat-option>-->
-        </mat-select>
-      </mat-form-field>
+    <mat-grid-tile colspan="2">
+      <div class="example-container">
+        <h2>Selected Columns</h2>
+
+        <div
+          cdkDropList
+          #selectList="cdkDropList"
+          [cdkDropListData]="selectedColumns"
+          [cdkDropListConnectedTo]="[allList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of selectedColumns" cdkDrag>{{item.fieldName}}</div>
+        </div>
+      </div>
     </mat-grid-tile>
 
-    <mat-grid-tile colspan="12">
-      <mat-form-field>
-        <mat-label>SQL Command</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
+    <mat-grid-tile colspan="7">
+      <div class="mat-elevation-z8 table-width">
+        <h2>Example Data</h2>
+        <table mat-table [dataSource]="dataSource">
+          <ng-container *ngFor="let c of displayedColumns" [matColumnDef]="c">
+            <th mat-header-cell *matHeaderCellDef> {{c}} </th>
+            <td mat-cell *matCellDef="let element"> {{element[c]}} </td>
+          </ng-container>
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
     </mat-grid-tile>
 
-    <mat-grid-tile colspan="12">
-      <button mat-raised-button>Create Report</button>
-    </mat-grid-tile>
-
-    <mat-grid-tile colspan="2"></mat-grid-tile>
   </mat-grid-list>
 </ng-container>
 
