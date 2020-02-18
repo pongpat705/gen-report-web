@@ -17,7 +17,7 @@ export class ReportDesignComponent implements OnInit {
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor() { }
 
