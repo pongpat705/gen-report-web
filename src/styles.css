@@ -4,6 +4,9 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-grid-tile .mat-figure {
+  margin-right: 10px !important;
+  margin-left: 10px !important;
   align-items: baseline !important;
   margin-top: 10px !important;
+  display: block !important;
 }

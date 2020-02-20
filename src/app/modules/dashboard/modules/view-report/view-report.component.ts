@@ -1,19 +1,14 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ReportStructure} from '../../core/model/report-structure';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {ReportStructure} from '../../../../core/model/report-structure';
 
 @Component({
-  selector: 'app-report-design',
-  templateUrl: './report-design.component.html',
-  styleUrls: ['./report-design.component.css']
+  selector: 'app-view-report',
+  templateUrl: './view-report.component.html',
+  styleUrls: ['./view-report.component.css']
 })
-export class ReportDesignComponent implements OnInit {
-
+export class ViewReportComponent implements OnInit {
   allColumns: ReportStructure[];
-
-  selectedColumns: ReportStructure[];
-
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
 
@@ -23,7 +18,6 @@ export class ReportDesignComponent implements OnInit {
 
   ngOnInit() {
     this.allColumns = new Array<ReportStructure>();
-    this.selectedColumns = new Array<ReportStructure>();
     this.allColumns.push({fieldName: 'ORDER_ID', fieldType: 'NUMBER', filedNo: 1,  reportId: 1, structureId: 1});
     this.allColumns.push({fieldName: 'ORDER_DATE', fieldType: 'VARCHAR', filedNo: 2,  reportId: 1, structureId: 2});
     this.allColumns.push({fieldName: 'CUSTOMER_CODE', fieldType: 'VARCHAR', filedNo: 3,  reportId: 1, structureId: 3});
@@ -37,7 +31,6 @@ export class ReportDesignComponent implements OnInit {
     this.allColumns.push({fieldName: 'UNIT_PRICE', fieldType: 'VARCHAR', filedNo: 11, reportId: 1, structureId: 11});
     this.allColumns.push({fieldName: 'DISCOUNT', fieldType: 'VARCHAR', filedNo: 12, reportId: 1, structureId: 12});
     this.allColumns.push({fieldName: 'TOTAL_PRICE', fieldType: 'VARCHAR', filedNo: 13, reportId: 1, structureId: 13});
-
     this.displayedColumns = new Array<string>();
     this.allColumns.forEach((x: ReportStructure) => {
       this.displayedColumns.push(x.fieldName);
@@ -45,17 +38,6 @@ export class ReportDesignComponent implements OnInit {
     this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA);
     this.paginator.length = this.allColumns.length;
     this.paginator.pageSize = 5;
-  }
-
-  drop(event: CdkDragDrop<ReportStructure[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    }
   }
 
 }
@@ -212,3 +194,4 @@ const ELEMENT_DATA: any[] = [
     TOTAL_PRICE: '336.00'
   }
 ];
+

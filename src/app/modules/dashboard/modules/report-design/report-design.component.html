@@ -1,0 +1,103 @@
+<ng-container>
+  <mat-grid-list cols="12" rowHeight="3:16">
+
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <div class="container">
+        <h2>All Columns</h2>
+
+        <div
+          cdkDropList
+          #allList="cdkDropList"
+          [cdkDropListData]="allColumns"
+          [cdkDropListConnectedTo]="[selectList]"
+          class="list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="box" *ngFor="let item of allColumns" cdkDrag>{{item.fieldName}}</div>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+      <div class="container">
+        <h2>Display Columns</h2>
+
+        <div
+          cdkDropList
+          #selectList="cdkDropList"
+          [cdkDropListData]="selectedColumns"
+          [cdkDropListConnectedTo]="[allList]"
+          class="list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="box" *ngFor="let item of selectedColumns" cdkDrag>{{item.fieldName}}</div>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+<!--    <mat-grid-tile colspan="6">-->
+<!--      <div class="container">-->
+<!--        <h2>Layout Report</h2>-->
+<!--        <div class="design-boundary">-->
+<!--          <div class="design-box" cdkDragBoundary=".design-boundary" cdkDrag *ngFor="let s of selectedColumns" (cdkDragDropped)="boxDropped($event)">-->
+<!--           {{s.fieldName}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </mat-grid-tile>-->
+
+    <mat-grid-tile colspan="3">
+      <div class="container">
+        <h2>Configurations</h2>
+        <fieldset>
+          <legend>Security Option:</legend>
+          <mat-slide-toggle>Authorized Request</mat-slide-toggle>
+        </fieldset>
+
+        <fieldset>
+          <legend>Export Option:</legend>
+          <mat-slide-toggle>Excel</mat-slide-toggle>
+          <mat-slide-toggle>CSV</mat-slide-toggle>
+          <mat-slide-toggle>PDF</mat-slide-toggle>
+        </fieldset>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3">
+      <div class="container">
+        <h2>Actions</h2>
+
+        <fieldset>
+          <legend>Configuration Action:</legend>
+          <button mat-flat-button color="warn"><mat-icon>archive</mat-icon>SAVE CONFIGS</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Report Action:</legend>
+          <button mat-flat-button color="warn"  routerLink="/view-report"><mat-icon>open_in_new</mat-icon>VIEW REPORT</button>
+          <fieldset>
+            <legend>Generate PDF:</legend>
+            <button mat-flat-button color="accent" [disabled]="true"><mat-icon>get_app</mat-icon>GENERATE PDF</button>
+            <p id="pdfprocess">1 of 4 processed</p>
+            <mat-progress-bar mode="buffer"></mat-progress-bar>
+          </fieldset>
+          <fieldset>
+            <legend>Generate EXCEL:</legend>
+            <button mat-flat-button color="accent" [disabled]="false"><mat-icon>get_app</mat-icon>GENERATE EXCEL</button>
+            <p id="excelprocess">4 of 4 processed</p>
+          </fieldset>
+          <fieldset>
+            <legend>Generate CSV:</legend>
+            <button mat-flat-button color="accent" [disabled]="false"><mat-icon>get_app</mat-icon>GENERATE CSV</button>
+            <p id="csvprocess">4 of 4 processed</p>
+          </fieldset>
+        </fieldset>
+
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+
+
+  </mat-grid-list>
+</ng-container>
+

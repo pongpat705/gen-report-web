@@ -5,15 +5,17 @@ import {CreateReportComponent} from '../../modules/create-report/create-report.c
 import {AppLayoutComponent} from '../../core/app-layout/app-layout.component';
 import {DashboardComponent} from '../../modules/dashboard/dashboard.component';
 import {NotfoundComponent} from '../../core/notfound/notfound.component';
-import {ReportDesignComponent} from '../../modules/report-design/report-design.component';
+import {ReportDesignComponent} from '../../modules/dashboard/modules/report-design/report-design.component';
+import {ViewReportComponent} from '../../modules/dashboard/modules/view-report/view-report.component';
 
 const appRoutes: Route[] = [
   {
     path: '', component: AppLayoutComponent,
     children: [
       {path: '', component: DashboardComponent},
-      {path: 'create-report', component: CreateReportComponent},
       {path: 'report-design', component: ReportDesignComponent},
+      {path: 'view-report', component: ViewReportComponent},
+      {path: 'create-report', component: CreateReportComponent},
       {path: '**', component: NotfoundComponent}
     ]
   }

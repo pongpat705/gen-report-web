@@ -15,13 +15,14 @@ import {
   MatSelectModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatBottomSheetModule, MatTableModule, MatPaginatorModule, MatIconModule
+  MatBottomSheetModule, MatTableModule, MatPaginatorModule, MatIconModule, MatSlideToggleModule, MatProgressBarModule
 } from '@angular/material';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { SqlBottomSheetComponent } from './modules/dashboard/modules/sql-bottom-sheet/sql-bottom-sheet.component';
-import { ReportDesignComponent } from './modules/report-design/report-design.component';
+import { ReportDesignComponent } from './modules/dashboard/modules/report-design/report-design.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { ViewReportComponent } from './modules/dashboard/modules/view-report/view-report.component';
 
 
 
@@ -36,7 +37,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     DashboardComponent,
     NotfoundComponent,
     SqlBottomSheetComponent,
-    ReportDesignComponent
+    ReportDesignComponent,
+    ViewReportComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     DragDropModule,
     MatTableModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

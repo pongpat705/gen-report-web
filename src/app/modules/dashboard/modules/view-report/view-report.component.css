@@ -1,0 +1,13 @@
+.container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+.table-width {
+  width: 100%;
+  overflow-x: scroll;
+}
