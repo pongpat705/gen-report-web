@@ -15,7 +15,7 @@ import {
   MatSelectModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatBottomSheetModule, MatTableModule, MatPaginatorModule, MatIconModule, MatSlideToggleModule, MatProgressBarModule
+  MatBottomSheetModule, MatTableModule, MatPaginatorModule, MatIconModule, MatSlideToggleModule, MatProgressBarModule, MatSnackBarModule
 } from '@angular/material';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
@@ -58,7 +58,8 @@ import { ViewReportComponent } from './modules/dashboard/modules/view-report/vie
     MatPaginatorModule,
     MatIconModule,
     MatSlideToggleModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

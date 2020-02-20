@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ReportStructure} from '../../../../core/model/report-structure';
 import {CdkDragDrop, copyArrayItem, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {MatPaginator, MatSnackBar, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-report-design',
@@ -14,7 +14,7 @@ export class ReportDesignComponent implements OnInit {
 
   selectedColumns: ReportStructure[];
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.allColumns = new Array<ReportStructure>();
@@ -35,6 +35,13 @@ export class ReportDesignComponent implements OnInit {
 
 
   }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
+
 
   drop(event: CdkDragDrop<ReportStructure[]>) {
     if (event.previousContainer === event.container) {

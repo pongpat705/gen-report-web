@@ -68,7 +68,7 @@
 
         <fieldset>
           <legend>Configuration Action:</legend>
-          <button mat-flat-button color="warn"><mat-icon>archive</mat-icon>SAVE CONFIGS</button>
+          <button mat-flat-button color="warn" (click)="openSnackBar('saved', 'close');"><mat-icon>archive</mat-icon>SAVE CONFIGS</button>
         </fieldset>
 
         <fieldset>
