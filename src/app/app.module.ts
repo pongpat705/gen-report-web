@@ -23,6 +23,7 @@ import { SqlBottomSheetComponent } from './modules/dashboard/modules/sql-bottom-
 import { ReportDesignComponent } from './modules/dashboard/modules/report-design/report-design.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ViewReportComponent } from './modules/dashboard/modules/view-report/view-report.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -41,6 +42,7 @@ import { ViewReportComponent } from './modules/dashboard/modules/view-report/vie
     ViewReportComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRouteModule,
     BrowserAnimationsModule,

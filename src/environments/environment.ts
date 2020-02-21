@@ -1,9 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+const context = 'http://localhost:8080/report';
 export const environment = {
-  production: false
+  production: false,
+  services: {
+    dashboard: {
+      reportList: context + '/dashboard/api/report-list'
+    }
+  }
 };
 
 /*
