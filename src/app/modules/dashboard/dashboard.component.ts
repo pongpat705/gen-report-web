@@ -3,6 +3,7 @@ import {ReportModel} from '../../core/model/report-model';
 import {MatBottomSheet} from '@angular/material';
 import {SqlBottomSheetComponent} from './modules/sql-bottom-sheet/sql-bottom-sheet.component';
 import {DashboardServiceService} from './service/dashboard-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +19,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private bottomSheet: MatBottomSheet,
     private dashboardService: DashboardServiceService,
+    private router: Router
   ) {
   }
 
@@ -30,8 +32,13 @@ export class DashboardComponent implements OnInit {
   }
 
   public openBottomSheet(text: string): void {
-    this.dashboardService.setSqlText(text);
+    this.dashboardService.sqlText = text;
     this.bottomSheet.open(SqlBottomSheetComponent);
+  }
+
+  public openDesignPage(reportId: number): void {
+    this.dashboardService.currentReportId = reportId;
+    this.router.navigateByUrl('/report-design');
   }
 
 }

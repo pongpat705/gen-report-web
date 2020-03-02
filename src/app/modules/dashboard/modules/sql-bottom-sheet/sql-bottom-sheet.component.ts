@@ -18,7 +18,7 @@ export class SqlBottomSheetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.text = this.dashboardService.getSqlText();
+    this.text = this.dashboardService.sqlText;
   }
 
 }

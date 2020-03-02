@@ -1,5 +1,6 @@
 export class ResponseModel<T> {
-  code: number;
+  timeStamp: string;
   message: string;
+  code: number;
   data: T;
 }

@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   services: {
     dashboard: {
-      reportList: context + '/dashboard/api/report-list'
+      reportList: context + '/dashboard/api/report-list',
+      reportStructureList: context + '/dashboard/api/report-structure-list'
     }
   }
 };
